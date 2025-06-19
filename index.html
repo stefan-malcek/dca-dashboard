@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DCA Stock Dashboard</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">📊 DCA Stock Dashboard</h1>
+
+    <!-- Summary Buttons -->
+    <div class="mb-4 pb-2">
+      <div id="stock-summary" class="flex flex-wrap gap-2 px-1 py-2 border rounded bg-white shadow-inner"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-4">
+      <div class="w-full sm:w-1/2">
+        <label for="percent-input" class="block text-sm font-medium text-gray-700">
+          DCA treshold in %:
+        </label>
+        <input id="percent-input" type="number" value="20" min="1" max="99"
+               class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm" />
+      </div>
+
+      <div class="flex gap-2 items-end w-full sm:w-1/2">
+        <div class="w-full">
+          <label for="new-stock" class="block text-sm font-medium text-gray-700">Add Stock:</label>
+          <input id="new-stock" type="text"
+                 class="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm uppercase"
+                 placeholder="e.g. IBM" />
+        </div>
+        <button id="add-stock-btn"
+                class="h-[42px] px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700">
+          Add
+        </button>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div id="chart" class="bg-white p-4 rounded shadow w-full relative"></div>
+    
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
